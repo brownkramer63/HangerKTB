@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ProfileController {
 
     @RequestMapping("/profile")
-    public String getloginPage(){
+    public String getProfilePage(){
         return "profile.html";
     }
 }

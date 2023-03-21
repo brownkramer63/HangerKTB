@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Square Payment Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/javascript" src="https://js.squareupsandbox.com/v2/paymentform"></script>
+    <script type="text/javascript">
+        const applicationId = "YOUR_APPLICATION_ID";
+        const locationId = "YOUR_LOCATION_ID";
+        const paymentForm = new SqPaymentForm({
+            applicationId: applicationId,
+            locationId: locationId,
+            inputClass: 'sq-input',
+            autoBuild: false,
+            inputStyles: [
+                {
+                    fontSize: '16px',
+                    lineHeight: '24px',
+                    padding: '16px',
+                    placeholderColor: '#a0a0a0',
+                    backgroundColor: 'transparent',
+                }
+            ],
+            cardNumber: {
+                elementId: 'sq-card-number',
+                placeholder: 'Card Number'
+            },
+            cvv: {
+                elementId: 'sq-cvv',
+                placeholder: 'CVV'
+            },
+            expirationDate: {
+                elementId: 'sq-expiration-date',
+                placeholder: 'MM/YY'
+            },
+            postalCode: {
+                elementId: 'sq-postal-code',
+                placeholder: 'Zip Code'
+            },
+            callbacks: {
+                cardNonceResponseReceived: function(errors, nonce, cardData) {
+                    if (errors) {
+                        console.log('Encountered errors:');
+                        errors.forEach(function(error) {
+                            console.log('  ' + error.message);
+                        });
+                        alert('There was an error processing your payment. Please try again.');
+                    } else {
+                        console.log('Success! Nonce received: ' + nonce);
+                        alert('Your payment was processed successfully.');
+                        // Send the nonce to your server.
+                    }
+                }
+            }
+        });
+        function buildPaymentForm() {
+            paymentForm.build();
+        }
+    </script>
+</head>
+<body onload="buildPaymentForm()">
+<header>
+    <h1>Square Payment Page</h1>
+</header>
+<div style="display: flex; justify-content: center;">
+    <form id="payment-form" method="post">
+        <div id="sq-card-number"></div>
+        <div class="third" id="sq-expiration-date"></div>
+        <div class="third" id="sq-cvv"></div>
+        <div class="third" id="sq-postal-code"></div>
+        <input type="submit" value="Pay Now">
+    </form>
+</div>
+</body>
+</html>
