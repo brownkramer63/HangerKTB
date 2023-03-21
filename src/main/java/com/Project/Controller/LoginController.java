@@ -8,13 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 @Controller
-@Slf4j
-@RequestMapping("/Login")
 public class LoginController {
 
-    @GetMapping("/Login")
-    public String login(){
-        return "Login";
+    @RequestMapping("/login")
+    public String getloginPage(){
+        return "login.html";
     }
 
 
