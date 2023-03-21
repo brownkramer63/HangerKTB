@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-top: 30px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 30px auto;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            color: #333;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        td:last-child {
+            font-weight: bold;
+        }
+
+        td.checkout {
+            text-align: center;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background-color: #3e8e41;
+        }
+
+        .sidebar {
+            height: 100%;
+            width: 160px;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #4CAF50;
+            overflow-x: hidden;
+            padding-top: 20px;
+        }
+
+        .sidebar a {
+            display: block;
+            color: white;
+            padding: 16px;
+            text-decoration: none;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .sidebar a:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <a href="#">Button 1</a>
+    <a href="#">Button 2</a>
+    <a href="#">Button 3</a>
+</div>
+<header>
+    <h1>User Information</h1>
+</header>
+<table>
+    <thead>
+    <tr>
+        <th>User</th>
+        <th>Activation Time</th>
+        <th>Date</th>
+        <th>Time Remaining</th>
+        <th>Payment Method</th>
+        <th>Check Out</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>John Smith</td>
+        <td>10:30 AM</td>
+        <td>March 21, 2023</td>
+        <td>2 hours 30 minutes</td>
+        <td>Credit Card</td>
+        <td class="checkout"><button>Check Out</button></td>
+    </tr>
+    <tr>
+        <td>Jane Doe</td>
+        <td>12:15 PM</td>
+        <td>March 21, 2023</td>
+        <td>1 hour 45 minutes</td>
+        <td>PayPal</td>
+        <td class="checkout"><button>Check Out</button></td>
+    </tr>
+    <tr>
+        <td>Michael Johnson</td>
+        <td>1:45 PM</td>
+        <td>
+    </tbody>
+</table>
+</body>
+</html>
