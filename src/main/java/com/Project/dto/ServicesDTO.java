@@ -1,23 +1,13 @@
-package com.Project.entity.Base;
+package com.Project.dto;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.Project.entity.Base.Profile;
 
-import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
-@NoArgsConstructor
-@Entity
-@Table(name = "services")
-public class Services extends BaseEntity{
-
+public class ServicesDTO {
     private String serviceName;
     private LocalDateTime serviceDuration;
     private BigDecimal servicePrice;

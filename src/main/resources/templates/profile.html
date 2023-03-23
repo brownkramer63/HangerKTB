@@ -66,18 +66,18 @@
     <h1>Profile Creation</h1>
 </header>
 <div style="display: flex; justify-content: center;">
-    <form action="#" method="post">
+    <form th:action="@{/profile/create}" method="post" th:object="${newProfile}">
         <label for="fname">First Name:</label>
-        <input type="text" id="fname" name="fname" required>
+        <input type="text" th:field="*{firstName}" id="fname" name="fname" required>
 
         <label for="lname">Last Name:</label>
-        <input type="text" id="lname" name="lname" required>
+        <input type="text" th:field="*{lastName}"id="lname" name="lname" required>
 
         <label for="phone">Phone Number:</label>
-        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required>
+        <input type="tel" th:field="*{phoneNumber}"id="phone" name="phone" pattern="[0-9]{10}" required>
 
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" th:field="*{email}"id="email" name="email" required>
 
         <input type="submit" value="Submit">
     </form>
