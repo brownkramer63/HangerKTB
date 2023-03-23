@@ -20,7 +20,4 @@ public class Client extends BaseEntity{
     private String email;
     private String phoneNumber;
     private String password;
-    @OneToMany
-    private Services services;
-
 }

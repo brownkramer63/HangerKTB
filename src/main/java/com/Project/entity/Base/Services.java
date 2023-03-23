@@ -5,7 +5,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -15,9 +19,13 @@ import javax.persistence.Table;
 public class Services extends BaseEntity{
 
     private String serviceName;
-    private String serviceDuration;
-    private String servicePrice;
-    private String serviceStartTime;
-    private String serviceEndTime;
-    private String serviceTimeRemaining;
+    private LocalDateTime serviceDuration;
+    private BigDecimal servicePrice;
+    private LocalDateTime serviceStartTime;
+    private LocalDateTime serviceEndTime;
+    private LocalDateTime serviceTimeRemaining;
+
+    @ManyToOne
+    @JoinColumn(name = "client_id")
+    private Client client;
 }
